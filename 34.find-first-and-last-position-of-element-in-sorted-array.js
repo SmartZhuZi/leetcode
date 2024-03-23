@@ -15,11 +15,9 @@ var searchRange = function(nums, target) {
         let left=0;
         let right=nums.length;
         while(left<right){
-            
             let mid = left+Math.floor((right-left)/2);
-            // console.log(left,right,mid);
             if (nums[mid] >= target){
-                right = mid;    
+                right = mid;
             }
             else {
                 left = mid+1;
@@ -42,7 +40,6 @@ var searchRange = function(nums, target) {
         }
         return left-1;
     };
-    // console.log(findleft(),findright())
     let leftindex = findleft();
     let rightindex = findright();
     if (leftindex <= rightindex && rightindex < nums.length && nums[leftindex] === target && nums[rightindex] === target) {
